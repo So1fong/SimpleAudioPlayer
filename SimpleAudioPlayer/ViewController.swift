@@ -19,56 +19,36 @@ class ViewController: UIViewController
     {
         super.viewDidLoad()
         
-        //player = initializePlayer()
-        let audioSourceURL: URL
-        audioSourceURL = Bundle.main.url(forResource: "03. Kein Liebeslied", withExtension: "mp3")!
-        do
-        {
-            player = try  AVAudioPlayer(contentsOf: audioSourceURL)
-            player?.prepareToPlay()
-            //player?.play()
-            //return player
-        }
-        catch
-        {
-            print("Error")
-            //return nil
-        }
-        //player?.play()
+        player = initializePlayer()
+        player?.prepareToPlay()
+        player?.play()
         self.bPlay.layer.cornerRadius = 10
         self.bStop.layer.cornerRadius = 10
 
     }
-/*
+
     func initializePlayer() -> AVAudioPlayer?
     {
-        //let path = Bundle.main.path(forResource: "03 - Kein Liebeslied.mp3", ofType: nil)!
-        let audioSourceURL: URL!
-        audioSourceURL = Bundle.main.url(forResource: "03 - Kein Liebeslied", withExtension: "mp3")
-        do
+        if let audioSourceURL = Bundle.main.url(forResource: "03. Kein Liebeslied", withExtension: "mp3")
         {
-            player = try  AVAudioPlayer(contentsOf: audioSourceURL)
-            player?.prepareToPlay()
-            //player?.play()
-            return player
+            do
+            {
+                player = try  AVAudioPlayer(contentsOf: audioSourceURL)
+                player?.prepareToPlay()
+                //player?.play()
+                return player
+            }
+            catch
+            {
+                print("Error")
+                return nil
+            }
         }
-        catch
+        else
         {
-            print("Error")
             return nil
         }
- }
- */
-/*
-    {
-        guard let audioPath = Bundle.main.path(forResource: "03. Kein Leibeslied", ofType: "mp3")
-            else
-        {
-            //try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath))
-            return nil
-        }
-        return try? AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath))
     }
-*/
+ 
 }
 
