@@ -18,13 +18,9 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
         player = initializePlayer()
-        player?.prepareToPlay()
-        player?.play()
         self.bPlay.layer.cornerRadius = 10
         self.bStop.layer.cornerRadius = 10
-
     }
 
     func initializePlayer() -> AVAudioPlayer?
@@ -35,7 +31,6 @@ class ViewController: UIViewController
             {
                 player = try  AVAudioPlayer(contentsOf: audioSourceURL)
                 player?.prepareToPlay()
-                //player?.play()
                 return player
             }
             catch
@@ -48,6 +43,17 @@ class ViewController: UIViewController
         {
             return nil
         }
+    }
+    
+    @IBAction func pushPlay(_ sender: UIButton)
+    {
+        player?.prepareToPlay()
+        player?.play()
+    }
+    
+    @IBAction func pushStop(_ sender: UIButton)
+    {
+        player?.stop()
     }
  
 }
