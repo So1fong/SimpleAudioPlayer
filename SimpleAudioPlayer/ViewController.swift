@@ -13,6 +13,7 @@ class ViewController: UIViewController
 {
     var player: AVAudioPlayer?
     @IBOutlet weak var bPlay: UIButton!
+    @IBOutlet weak var bStop: UIButton!
     
     override func viewDidLoad()
     {
@@ -33,14 +34,10 @@ class ViewController: UIViewController
             print("Error")
             //return nil
         }
-        player?.play()
-        
-        //self.player?.play()
-        
-        //self.bPlay.layer.cornerRadius = 3
+        //player?.play()
+        self.bPlay.layer.cornerRadius = 10
+        self.bStop.layer.cornerRadius = 10
 
-        
-        //self.player.play()
     }
 /*
     func initializePlayer() -> AVAudioPlayer?
