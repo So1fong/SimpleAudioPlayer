@@ -55,11 +55,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <items>
-                                    <barButtonItem title="Item" id="rTp-rs-353"/>
+                                    <barButtonItem image="Back" id="rTp-rs-353"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ft9-vi-XlR"/>
                                     <barButtonItem title="Item" image="Play" id="Efd-X0-vbz"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="RcD-Fm-Q66"/>
-                                    <barButtonItem title="Item" id="A7K-Ws-bS7"/>
+                                    <barButtonItem image="Forward" id="A7K-Ws-bS7"/>
                                 </items>
                                 <color key="tintColor" red="0.44241500680000001" green="0.80837997240000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -104,6 +104,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Back" width="94" height="46"/>
+        <image name="Forward" width="94" height="46"/>
         <image name="Play" width="103" height="102"/>
         <image name="Stop" width="102" height="102"/>
     </resources>
