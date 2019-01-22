@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D80597D021F7A14E00573741 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80597CF21F7A14E00573741 /* SecondViewController.swift */; };
 		D846DD4921F518FB00D7EA76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846DD4821F518FB00D7EA76 /* AppDelegate.swift */; };
 		D846DD4B21F518FB00D7EA76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846DD4A21F518FB00D7EA76 /* ViewController.swift */; };
 		D846DD4E21F518FB00D7EA76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D846DD4C21F518FB00D7EA76 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D80597CF21F7A14E00573741 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		D846DD4521F518FB00D7EA76 /* SimpleAudioPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleAudioPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D846DD4821F518FB00D7EA76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D846DD4A21F518FB00D7EA76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				D846DD4821F518FB00D7EA76 /* AppDelegate.swift */,
 				D846DD4A21F518FB00D7EA76 /* ViewController.swift */,
+				D80597CF21F7A14E00573741 /* SecondViewController.swift */,
 				D846DD4C21F518FB00D7EA76 /* Main.storyboard */,
 				D846DD4F21F518FD00D7EA76 /* Assets.xcassets */,
 				D846DD5C21F51D9000D7EA76 /* 03. Kein Liebeslied.mp3 */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D80597D021F7A14E00573741 /* SecondViewController.swift in Sources */,
 				D846DD4B21F518FB00D7EA76 /* ViewController.swift in Sources */,
 				D846DD4921F518FB00D7EA76 /* AppDelegate.swift in Sources */,
 			);

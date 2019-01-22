@@ -19,8 +19,6 @@ class ViewController: UIViewController
     {
         super.viewDidLoad()
         player = initializePlayer()
-        //self.bPlay.layer.cornerRadius = 10
-        //self.bStop.layer.cornerRadius = 10
     }
 
     func initializePlayer() -> AVAudioPlayer?
