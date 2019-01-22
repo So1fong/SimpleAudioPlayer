@@ -67,6 +67,8 @@
                     </view>
                     <connections>
                         <outlet property="lbl" destination="1Vh-HX-xOc" id="p5Y-pH-ZcX"/>
+                        <outlet property="pbPlay" destination="Efd-X0-vbz" id="Vqj-lA-PLm"/>
+                        <outlet property="toolBar" destination="uqw-bb-TiY" id="h9R-fw-dnR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -13,7 +13,11 @@ class ViewController: UIViewController
 {
     var player: AVAudioPlayer?
     var isPlaying = false
+    var imagePause: UIImage?
+    var imagePlay: UIImage?
+    @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var lbl: UILabel!
+    @IBOutlet weak var pbPlay: UIBarButtonItem!
     
     override func viewDidLoad()
     {
@@ -70,7 +74,12 @@ class ViewController: UIViewController
     func setOnPlay()
     {
         isPlaying = true
+        imagePause = UIImage(named: "Pause")
         lbl.text = "Playing..."
+        if imagePause != nil
+        {
+            pbPlay.image = imagePause
+        }
         player?.prepareToPlay()
         player?.play()
     }
@@ -79,6 +88,11 @@ class ViewController: UIViewController
     {
         isPlaying = false
         lbl.text = "Paused..."
+        imagePlay = UIImage(named: "Play")
+        if imagePlay != nil
+        {
+            pbPlay.image = imagePlay
+        }
         player?.stop()
     }
  
