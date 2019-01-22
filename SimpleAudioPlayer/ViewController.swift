@@ -13,8 +13,6 @@ class ViewController: UIViewController
 {
     var player: AVAudioPlayer?
     var isPlaying = false
-    var imagePause: UIImage?
-    var imagePlay: UIImage?
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var lbl: UILabel!
     @IBOutlet weak var pbPlay: UIBarButtonItem!
@@ -74,9 +72,8 @@ class ViewController: UIViewController
     func setOnPlay()
     {
         isPlaying = true
-        imagePause = UIImage(named: "Pause")
         lbl.text = "Playing..."
-        if imagePause != nil
+        if let imagePause = UIImage(named: "Pause")
         {
             pbPlay.image = imagePause
         }
@@ -88,13 +85,11 @@ class ViewController: UIViewController
     {
         isPlaying = false
         lbl.text = "Paused..."
-        imagePlay = UIImage(named: "Play")
-        if imagePlay != nil
+        if let imagePlay = UIImage(named: "Play")
         {
             pbPlay.image = imagePlay
         }
         player?.stop()
     }
- 
 }
 
