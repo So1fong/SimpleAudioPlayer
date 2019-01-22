@@ -14,6 +14,7 @@ class ViewController: UIViewController
     var player: AVAudioPlayer?
     @IBOutlet weak var bPlay: UIButton!
     @IBOutlet weak var bStop: UIButton!
+    @IBOutlet weak var lbl: UILabel!
     
     override func viewDidLoad()
     {
@@ -43,6 +44,25 @@ class ViewController: UIViewController
         }
     }
     
+
+    @IBAction func pbPlayClicked(_ sender: Any)
+    {
+        lbl.text = "Playing..."
+        player?.prepareToPlay()
+        player?.play()
+    }
+    
+    @IBAction func pbRewindClicked(_ sender: Any)
+    {
+        lbl.text = "Rewinding..."
+    }
+    
+    @IBAction func pbFastForwardClicked(_ sender: Any)
+    {
+        lbl.text = "Fast forwarding..."
+    }
+    
+    //удалить потом
     @IBAction func pushPlay(_ sender: UIButton)
     {
         player?.prepareToPlay()

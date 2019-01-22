@@ -55,15 +55,34 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <items>
-                                    <barButtonItem image="Back" id="rTp-rs-353"/>
+                                    <barButtonItem image="Back" id="rTp-rs-353">
+                                        <connections>
+                                            <action selector="pbRewindClicked:" destination="BYZ-38-t0r" id="jjJ-uJ-T32"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ft9-vi-XlR"/>
-                                    <barButtonItem title="Item" image="Play" id="Efd-X0-vbz"/>
+                                    <barButtonItem title="Item" image="Play" id="Efd-X0-vbz">
+                                        <connections>
+                                            <action selector="pbPlayClicked:" destination="BYZ-38-t0r" id="Mx6-7H-cht"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="RcD-Fm-Q66"/>
-                                    <barButtonItem image="Forward" id="A7K-Ws-bS7"/>
+                                    <barButtonItem image="Forward" id="A7K-Ws-bS7">
+                                        <connections>
+                                            <action selector="pbFastForwardClicked:" destination="BYZ-38-t0r" id="vz2-lh-MZ5"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                                 <color key="tintColor" red="0.44241500680000001" green="0.80837997240000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>
                             </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Vh-HX-xOc">
+                                <rect key="frame" x="20" y="362" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.44241500680000001" green="0.80837997240000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -71,6 +90,7 @@
                     <connections>
                         <outlet property="bPlay" destination="how-cr-8Sa" id="svi-IG-fBg"/>
                         <outlet property="bStop" destination="kOx-uX-6Gp" id="Fpc-Ft-aka"/>
+                        <outlet property="lbl" destination="1Vh-HX-xOc" id="p5Y-pH-ZcX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
