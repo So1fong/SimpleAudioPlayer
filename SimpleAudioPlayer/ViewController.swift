@@ -12,6 +12,7 @@ import AVFoundation
 class ViewController: UIViewController
 {
     var player: AVAudioPlayer?
+    var isPlaying = false
     @IBOutlet weak var bPlay: UIButton!
     @IBOutlet weak var bStop: UIButton!
     @IBOutlet weak var lbl: UILabel!
@@ -47,30 +48,40 @@ class ViewController: UIViewController
 
     @IBAction func pbPlayClicked(_ sender: Any)
     {
-        lbl.text = "Playing..."
-        player?.prepareToPlay()
-        player?.play()
+        if !isPlaying
+        {
+            setOnPlay()
+        }
+        else
+        {
+            setOnPause()
+        }
     }
     
     @IBAction func pbRewindClicked(_ sender: Any)
     {
         lbl.text = "Rewinding..."
+        setOnPause()
     }
     
     @IBAction func pbFastForwardClicked(_ sender: Any)
     {
         lbl.text = "Fast forwarding..."
+        setOnPause()
     }
     
-    //удалить потом
-    @IBAction func pushPlay(_ sender: UIButton)
+    func setOnPlay()
     {
+        isPlaying = true
+        lbl.text = "Playing..."
         player?.prepareToPlay()
         player?.play()
     }
     
-    @IBAction func pushStop(_ sender: UIButton)
+    func setOnPause()
     {
+        isPlaying = false
+        lbl.text = "Paused..."
         player?.stop()
     }
  
