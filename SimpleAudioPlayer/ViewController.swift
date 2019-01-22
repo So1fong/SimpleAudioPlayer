@@ -13,8 +13,6 @@ class ViewController: UIViewController
 {
     var player: AVAudioPlayer?
     var isPlaying = false
-    @IBOutlet weak var bPlay: UIButton!
-    @IBOutlet weak var bStop: UIButton!
     @IBOutlet weak var lbl: UILabel!
     
     override func viewDidLoad()
@@ -45,7 +43,6 @@ class ViewController: UIViewController
         }
     }
     
-
     @IBAction func pbPlayClicked(_ sender: Any)
     {
         if !isPlaying
