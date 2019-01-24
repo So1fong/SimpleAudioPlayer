@@ -13,6 +13,8 @@ class ViewController: UIViewController
 {
     var player: AVAudioPlayer?
     var isPlaying = false
+    var isRewindingOrForwarding = false
+    var songDurationTimer: Timer!
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var lbl: UILabel!
     @IBOutlet weak var pbPlay: UIBarButtonItem!
@@ -22,6 +24,7 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        songDurationTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(changeSongDurationValues), userInfo: nil, repeats: true)
         player = initializePlayer()
         initializeSlider()
     }
@@ -58,6 +61,22 @@ class ViewController: UIViewController
         }
     }
     
+    @objc func changeSongDurationValues()
+    {
+        if let curTime = player?.currentTime
+        {
+            if isPlaying
+            {
+                slider.value = Float(curTime)
+            }
+            else if isRewindingOrForwarding
+            {
+                slider.value = 0.0
+            }
+            print(curTime)
+        }
+    }
+    
     @IBAction func onSliderTouchUpInside(_ sender: UISlider)
     {
         if sender == self.slider
@@ -81,6 +100,8 @@ class ViewController: UIViewController
     @IBAction func pbRewindClicked(_ sender: Any)
     {
         lbl.text = "Rewinding..."
+        isRewindingOrForwarding = true
+        player?.currentTime = 0
         slider.value = 0.0
         setOnPause()
     }
@@ -88,6 +109,8 @@ class ViewController: UIViewController
     @IBAction func pbFastForwardClicked(_ sender: Any)
     {
         lbl.text = "Fast forwarding..."
+        isRewindingOrForwarding = true
+        player?.currentTime = 0
         slider.value = 0.0
         setOnPause()
     }
@@ -107,6 +130,7 @@ class ViewController: UIViewController
     func setOnPause()
     {
         isPlaying = false
+        isRewindingOrForwarding = false
         lbl.text = "Paused..."
         if let imagePlay = UIImage(named: "Play")
         {
