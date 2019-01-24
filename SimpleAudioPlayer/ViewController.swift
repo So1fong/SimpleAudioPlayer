@@ -24,8 +24,8 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        songDurationTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(changeSongDurationValues), userInfo: nil, repeats: true)
         player = initializePlayer()
+        player?.prepareToPlay()
         initializeSlider()
     }
     
@@ -123,20 +123,22 @@ class ViewController: UIViewController
         {
             pbPlay.image = imagePause
         }
-        player?.prepareToPlay()
         player?.play()
+        songDurationTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(changeSongDurationValues), userInfo: nil, repeats: true)
     }
     
     func setOnPause()
     {
         isPlaying = false
         isRewindingOrForwarding = false
+        songDurationTimer.invalidate()
+        print(songDurationTimer.isValid)
         lbl.text = "Paused..."
         if let imagePlay = UIImage(named: "Play")
         {
             pbPlay.image = imagePlay
         }
-        player?.stop()
+        player?.pause()
     }
 }
 
