@@ -16,13 +16,14 @@ class ViewController: UIViewController
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var lbl: UILabel!
     @IBOutlet weak var pbPlay: UIBarButtonItem!
+    @IBOutlet weak var imageOfAlbum: UIImageView!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         player = initializePlayer()
     }
-
+    
     func initializePlayer() -> AVAudioPlayer?
     {
         if let audioSourceURL = Bundle.main.url(forResource: "03. Kein Liebeslied", withExtension: "mp3")
