@@ -59,7 +59,7 @@
                                 <rect key="frame" x="18" y="764" width="378" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="onSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="LwP-Wn-SS8"/>
+                                    <action selector="onSliderTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HIb-rd-HIz"/>
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdZ-cp-IKF">

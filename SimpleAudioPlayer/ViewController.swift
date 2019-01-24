@@ -58,7 +58,7 @@ class ViewController: UIViewController
         }
     }
     
-    @IBAction func onSliderValueChanged(_ sender: UISlider)
+    @IBAction func onSliderTouchUpInside(_ sender: UISlider)
     {
         if sender == self.slider
         {
