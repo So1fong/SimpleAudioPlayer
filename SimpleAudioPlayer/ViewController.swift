@@ -17,11 +17,13 @@ class ViewController: UIViewController
     @IBOutlet weak var lbl: UILabel!
     @IBOutlet weak var pbPlay: UIBarButtonItem!
     @IBOutlet weak var imageOfAlbum: UIImageView!
+    @IBOutlet weak var slider: UISlider!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         player = initializePlayer()
+        initializeSlider()
     }
     
     func initializePlayer() -> AVAudioPlayer?
@@ -46,6 +48,24 @@ class ViewController: UIViewController
         }
     }
     
+    func initializeSlider()
+    {
+        slider.value = 0.0
+        slider.minimumValue = 0.0
+        if let duration = player?.duration
+        {
+            slider.maximumValue = Float(duration)
+        }
+    }
+    
+    @IBAction func onSliderValueChanged(_ sender: UISlider)
+    {
+        if sender == self.slider
+        {
+            player?.currentTime = TimeInterval(sender.value)
+        }
+    }
+    
     @IBAction func pbPlayClicked(_ sender: Any)
     {
         if !isPlaying
@@ -61,12 +81,14 @@ class ViewController: UIViewController
     @IBAction func pbRewindClicked(_ sender: Any)
     {
         lbl.text = "Rewinding..."
+        slider.value = 0.0
         setOnPause()
     }
     
     @IBAction func pbFastForwardClicked(_ sender: Any)
     {
         lbl.text = "Fast forwarding..."
+        slider.value = 0.0
         setOnPause()
     }
     
